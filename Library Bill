@@ -1,0 +1,35 @@
+int main() {
+   char STUDENT_NAME;
+   int NUMBER,DAYS,TOTAL;
+   printf("ENTER YOUR NAME :");
+   scanf("%s", &STUDENT_NAME);
+   printf("ENTER STUDENT NUMBER :");
+   scanf("%d",&NUMBER);
+   printf("ENTER NUMBER OF DAYS :");
+   scanf("%d",&DAYS);
+   printf("\n======== LIbrary Bill Generation ========\n");
+   printf("            LIBRARY BILL       \n");
+   printf("STUDENT NAME:%s",& STUDENT_NAME);
+   printf("\nSTUDENT NUMBER: %d", &NUMBER);
+   printf("\nNUMBER OF DAYS:%d", &DAYS);
+   printf("\n==============================================\n");
+   if(DAYS<=0){
+       printf("NO FINE");
+       
+   }
+   else if("DAYS<=5"){
+       printf("FINE = ₹1 per day");
+   }
+   else if("DAYS<=10"){
+       printf("FINE = ₹5 per day");
+       
+   }
+   else if(DAYS<=30){
+       printf("FINE = ₹10 per day");
+       
+   }
+   printf("\nTOTAL AMOUNT:₹");
+   scanf("%d",&TOTAL);
+   printf("\n============================================\n");
+    return 0;
+}
