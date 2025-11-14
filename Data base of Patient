@@ -1,0 +1,102 @@
+//Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+
+
+   struct Patient{
+    char NAME[10];
+    int AGE;
+    int DOB;
+    int CONTACT_NUMBER;
+    int PATIENT_ID;
+    char DISEASE[10];
+    int WORD_NUMBER;
+    int DOCTOR_ID;
+    int BILL;
+   
+   }
+   Patient[100],t;
+   int n=0;
+   
+   int main(){
+       int i,j,c,s,flag=0;
+       while(1)
+       {
+           printf("\n menu\n1.add record\n2.display record\n3.sort\n4.search\n5.exit\n Enter your choice:");
+           scanf("%d",&c);
+           switch(c){
+               case 1:
+               printf("\nEnter no of patient to add?:");
+               scanf("%d", &n);
+               for(i=0;i<n;i++){
+                   printf("\n ENTER PATIENT NAME:-");
+                   scanf("%s",&Patient[i].NAME);
+                   printf("\n ENTER PATIENT AGE:-");
+                   scanf("%d",&Patient[i].AGE);
+                   printf("\n ENTER DATE OF BIRTH:-");
+                   scanf("%d",&Patient[i].DOB);
+                   printf("\n ENTER CONTACT NUMBER:-");
+                   scanf("%d",&Patient[i].CONTACT_NUMBER);
+                   printf("\n ENTER PATIENT ID:-");
+                   scanf("%d",&Patient[i].PATIENT_ID);
+                   printf("\n ENTER DISEASE:-");
+                   scanf("%s",&Patient[i].DISEASE);
+                   printf("\n ENTER WORD NUMBER:-");
+                   scanf("%d",&Patient[i].WORD_NUMBER);
+                   printf("\n ENTER DOCTOR ID:-");
+                   scanf("%d",&Patient[i].DOCTOR_ID);
+                   printf("\n ENTER TOTAL AMOUNT:-");
+                   scanf("%d",&Patient[i].BILL);
+               }
+               break;
+               case 2:
+               for(i=0;i<n;i++){
+                   printf("\n*************************************************\n");
+                   printf("\nName:%s",Patient[i].NAME);
+                   printf("\nAge:%d",Patient[i].AGE);
+                   printf("\nDate of Birth:%d",Patient[i].DOB);
+                   printf("\nContact Number:%d",Patient[i].CONTACT_NUMBER);
+                   printf("\nPatient ID:%d",Patient[i].PATIENT_ID);
+                   printf("\nDisease:%s",Patient[i].DISEASE);
+                   printf("\nWord No:%d",Patient[i].WORD_NUMBER);
+                   printf("\nDoctor ID:%d",Patient[i].DOCTOR_ID);
+                   printf("\nBill:%d",Patient[i].BILL);
+               }
+               break;
+               case 4:
+               printf("\n Enter Patient ID to search:");
+               scanf("%d",&s);
+               for(i=0;i<n;i++){
+                   if(Patient[i].PATIENT_ID==s){
+                       printf("\nPatient ID:%d",Patient[i].PATIENT_ID);
+                       printf("\nName:%s",Patient[i].NAME);
+                       printf("\n Bill:%d",Patient[i].BILL);
+                       flag=1;
+                   }
+                   
+               }
+               if(flag==0){
+                   printf("\nRecord Not Found");
+               }
+               break;
+               
+               case 3:
+               for(i=0;i<n;i++){
+                   for(j=0;j<n-i-1;j++){
+                       if (Patient[j].BILL>Patient[j+1].BILL){
+                           t = Patient[j];
+                           Patient[j] = Patient[j+1];
+                           Patient[j+1] = t;
+                       }
+                   }
+           }
+           printf("\n Sorted the records, Use display Option to check....");
+           break;
+           case 5:
+           exit(0);
+       }
+   }
+   
+    return 0;
+}
+
