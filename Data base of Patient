@@ -1,0 +1,51 @@
+#include <stdio.h>
+struct Patient{
+    char NAME[10];
+    int AGE;
+    int DOB;
+    int CONTACT_NUMBER;
+    int PATIENT_ID;
+    char DISEASE[10];
+    int WORD_NUMBER;
+    int DOCTOR_ID;
+    int BILL;
+   
+};
+int main() {
+    struct Patient registation[2];
+    for(int i=0;i<2;i++){
+        printf("\n ENTER PATIENT NAME:-");
+        scanf("%s",&registation[i].NAME);
+        printf("\n ENTER PATIENT AGE:-");
+        scanf("%d",&registation[i].AGE);
+        printf("\n ENTER DATE OF BIRTH:-");
+        scanf("%d",&registation[i].DOB);
+        printf("\n ENTER CONTACT NUMBER:-");
+        scanf("%d",&registation[i].CONTACT_NUMBER);
+        printf("\n ENTER PATIENT ID:-");
+        scanf("%d",&registation[i].PATIENT_ID);
+        printf("\n ENTER DISEASE:-");
+        scanf("%s",&registation[i].DISEASE);
+        printf("\n ENTER WORD NUMBER:-");
+        scanf("%d",&registation[i].WORD_NUMBER);
+        printf("\n ENTER DOCTOR ID:-");
+        scanf("%d",&registation[i].DOCTOR_ID);
+        printf("\n ENTER TOTAL AMOUNT:-");
+        scanf("%d",&registation[i].BILL);
+    }
+    for(int i=0;i<2;i++){
+        printf("\n============================================\n");
+        printf("\nNAME:%s",registation[i].NAME);
+        printf("\nAGE:%d",registation[i].AGE);
+        printf("\nDate of Birth:%d",registation[i].DOB);
+        printf("\nCONTACT NUMBER:%d",registation[i].CONTACT_NUMBER);
+        printf("\nPATIENT ID:%d",registation[i].PATIENT_ID);
+        printf("\nDISEASE:%s",registation[i].DISEASE);
+        printf("\nWORD NUMBER:%d",registation[i].WORD_NUMBER);
+        printf("\nDOCTOR ID:%d",registation[i].DOCTOR_ID);
+        printf("\nTOTAL AMOUNT:%d",registation[i].BILL);
+        printf("\n============================================\n");
+    }
+    return 0;
+}
+
