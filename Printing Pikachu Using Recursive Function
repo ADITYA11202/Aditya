@@ -1,0 +1,20 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void print_pikachu_prefect() {
+    printf("\n");
+    printf("   /\\      /\\   \n"); // Ears
+    printf("  /  \\----/  \\  \n"); // Top of Head
+    printf(" /            \\ \n"); // Head Sides
+    printf("|  O        O  |\n"); // Eyes
+    printf("|      P       |\n"); // **PREFECT BADGE 'P'**
+    printf(" \\  \\/----\\/  / \n"); // Cheeks and Mouth
+    printf("  \\__________/  \n"); // Chin/Bottom
+    printf("\n");
+}
+
+int main() {
+    printf("--- Pikachu Prefect ---\n");
+    print_pikachu_prefect();
+    return 0;
+}
