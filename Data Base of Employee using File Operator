@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+
+int main() {
+    FILE *fp;
+    struct Employee emp;
+    int n, i;
+
+    fp = fopen("employee.txt", "w");
+    if (fp == NULL) {
+        printf("Error opening file!");
+        exit(1);
+    }
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("\nEnter Employee ID: ");
+        scanf("%d", &emp.id);
+
+        printf("Enter Employee Name: ");
+        scanf("%s", emp.name);
+
+        printf("Enter Employee Salary: ");
+        scanf("%f", &emp.salary);
+
+        
+        fprintf(fp, "%d %s %.2f\n", emp.id, emp.name, emp.salary);
+    }
+
+    fclose(fp);
+
+    printf("\nEmployee data written to file successfully.\n");
+
+    
+    fp = fopen("employee.txt", "r");
+    if (fp == NULL) {
+        printf("Error opening file!");
+        exit(1);
+    }
+
+    printf("\n--- Employee Records from File ---\n");
+    while (fscanf(fp, "%d %s %f", &emp.id, emp.name, &emp.salary) != EOF) {
+        printf("ID: %d\tName: %s\tSalary: %.2f\n", emp.id, emp.name, emp.salary);
+    }
+
+    fclose(fp);
+
+    return 0;
+}
