@@ -1,0 +1,24 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <string.h>
+int count(const char *s) {
+   
+    if (*s == '\0') {
+        return 0;
+    }
+   
+    else {
+        return 1 + count(s + 1);
+    }
+}
+
+int main() {
+   
+    const char *a = "lamborghini";
+   
+   int length = count(a);
+    printf("The length of \"%s\" : %d\n", a, length);
+   
+    return 0;
+}
+
