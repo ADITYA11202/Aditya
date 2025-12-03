@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+
+void printSpaces(int n) {
+    if (n == 0)
+        return;
+    printf(" ");
+    printSpaces(n - 1);
+}
+
+
+void printRow(int leftSpace, int middleSpace) {
+    printSpaces(leftSpace);
+    printf("*");
+
+    if (middleSpace >= 0) {
+        printSpaces(middleSpace);
+        printf("*");
+    }
+    printf("\n");
+}
+
+
+void dnaPattern(int row, int n) {
+    if (row == n)   
+        return;
+
+    int mid = n / 2;
+
+    if (row <= mid) {
+        printRow(row, n - 2 * row);
+    } else {
+        printRow(n - row - 1, 2 * row - n);
+    }
+
+    dnaPattern(row + 1, n); 
+}
+
+int main() {
+    int n;
+
+    printf("Enter number of lines (odd number recommended): ");
+    scanf("%d", &n);
+
+    printf("\nDNA Star Pattern:\n");
+    dnaPattern(0, n);
+
+    return 0;
+}
